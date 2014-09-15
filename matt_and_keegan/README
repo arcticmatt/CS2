@@ -1,0 +1,18 @@
+The README file
+WHAT we contributed
+Matt: Worked on implementing the random move algorithm and the minimax tree.
+Helped clean up the code.
+Keegan: Worked on implementing the heuristic algorithm and the minimax tree.
+Also tested our bot for time, and experimented with various depths for minimax.
+As for HOW we contributed these things, well, we coded them.
+
+As for improvements...
+We used a good heuristic array. We made it dynamic as well, by changing the
+weightings over time. We saved memory by using an iterative method instead
+recursive method. We went far in depth to ensure we beat BetterPlayer every
+time. We think our strategies will work because our Heuristic is really good (
+for example, a very low value placed on number of pieces on the board), which,
+combined with the depth to which we look ahead, makes for a formidable
+opponent. We tried to multithread it but ran into a bunch of compiler issues,
+so we aborted that plan. We also tried alpha-beta pruning, but in the end
+decided that we weren't going deep enough for it to be that useful.

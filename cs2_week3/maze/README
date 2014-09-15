@@ -1,0 +1,12 @@
+BFS will usually be faster than DFS when the maze is small, i.e. when the
+exit is not too far or "deep" from the starting point. Also, it finds the
+shortest route, which is better. Also, if there are a bunch of different
+paths, then BFS might also be faster, since the DFS might explore all
+the incorrect paths before choosing the right one.
+
+DFS takes up less memory than a BFS, which makes it better in some cases.
+In cases where the maze has large breadth, i.e. it branches a lot,
+but little depth, i.e. the branches are not too long, then the DFS
+might be faster. It is also faster in cases where it finds the correct path right away.
+
+A queue can be used to find the shortest path, or as a system to help customers (e.g. a line).

@@ -1,0 +1,16 @@
+This algorithm can be implemented with recursion. The recursion involves
+3 different parts. Let us call the function that aligns to strings
+align(). First, align will be called on the two strings wished to be
+aligned. Then, that function will check for base cases (if one of the
+strings is empty). After that, it will proceed to recursively call
+align() on three different strings: a gap in the second string, a gap
+in the first string, and no gaps. Each time these changes are applied,
+the first character of one or both strings is removed, which allows the
+function align() to compare only one pair of characters. By doing this,
+every possible alignment is tested. The scores get added up in the
+following way. Suppose we have two strings of at least length 2. Then
+the first recursive calls will generate three cases, as mentioned above. The
+minimum score of each of those cases is calculated. The score of each case
+is calculated by calculating the score of its three (or fewer) cases. Note
+that the removed first characters factor into the score. Thus in this way
+the minimum score can be found.

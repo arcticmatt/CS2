@@ -1,0 +1,64 @@
+==23953== Memcheck, a memory error detector
+==23953== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==23953== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==23953== Command: bin/raytracer -m
+==23953== 
+
+==23953== 
+==23953== HEAP SUMMARY:
+==23953==     in use at exit: 76,694 bytes in 931 blocks
+==23953==   total heap usage: 10,213,979 allocs, 10,213,048 frees, 141,837,415 bytes allocated
+==23953== 
+==23953== 20 bytes in 2 blocks are definitely lost in loss record 18 of 175
+==23953==    at 0x4C2CD7B: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23953==    by 0x5EF2971: strdup (strdup.c:42)
+==23953==    by 0x6BD9315: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BDA254: _XimSetICValueData (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BD587D: _XimLocalCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BBBCE2: XCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x4E73AEC: ??? (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==23953==    by 0x4E74A20: ??? (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==23953==    by 0x4E64E2A: SDL_VideoInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==23953==    by 0x4E3E3AB: SDL_InitSubSystem (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==23953==    by 0x4E3E42B: SDL_Init (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==23953==    by 0x401D32: RaytracerApp::OnInit() (RaytracerApp.cpp:155)
+==23953== 
+==23953== 192 (16 direct, 176 indirect) bytes in 1 blocks are definitely lost in loss record 148 of 175
+==23953==    at 0x4C2CF8E: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23953==    by 0x6BC17BE: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BC1C7B: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BC3474: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BC3C35: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BE03EF: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BCAEFD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BCB047: _XlcCurrentLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BCB09D: XSetLocaleModifiers (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x4E73C4B: ??? (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==23953==    by 0x4E74A20: ??? (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==23953==    by 0x4E64E2A: SDL_VideoInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==23953== 
+==23953== 192 (16 direct, 176 indirect) bytes in 1 blocks are definitely lost in loss record 149 of 175
+==23953==    at 0x4C2CF8E: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23953==    by 0x6BC17BE: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BC1C7B: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BC3474: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BC3C35: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BE03EF: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BCAEFD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BCB12A: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BB322F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6BB683D: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6B93643: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953==    by 0x6B93837: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==23953== 
+==23953== LEAK SUMMARY:
+==23953==    definitely lost: 52 bytes in 4 blocks
+==23953==    indirectly lost: 352 bytes in 8 blocks
+==23953==      possibly lost: 0 bytes in 0 blocks
+==23953==    still reachable: 76,290 bytes in 919 blocks
+==23953==         suppressed: 0 bytes in 0 blocks
+==23953== Reachable blocks (those to which a pointer was found) are not shown.
+==23953== To see them, rerun with: --leak-check=full --show-reachable=yes
+==23953== 
+==23953== For counts of detected and suppressed errors, rerun with: -v
+==23953== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 2 from 2)

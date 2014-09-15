@@ -1,0 +1,9 @@
+To implement the seam carving algorithm recursively, one could use a
+brute force technique and try to analyze all the seams. Assuming seams
+are only going down, the base case would be when you reach the bottom of
+the picture. The recursive step would go from one pixel to every other
+pixel in the downward direction (3 pixels if not on the edge, 2 if on the edge).
+This method would be called on every
+pixel at the top of the image. The complexity of this algorithm for an
+NxN image is O(N3^N). Thus, for a 50x50 image, it would take
+3.59e16 seconds if 1 billion computations were made per second.

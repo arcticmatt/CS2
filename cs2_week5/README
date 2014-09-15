@@ -1,0 +1,111 @@
+1) DFS DEBUGGING
+This algorithm could loop forever on a undirected graph, or a data structure
+that cycles. To fix these problems, you could keep track of nodes that have
+already been visited, and not visit them again when running through the
+algorithm so that every node is visited once at max.  Another problem I didn't
+mention before is that there is no semi colon after this->edges.begin().
+Instead, there is a comma.
+
+2) MST ESSENTIALS
+The three most essential properties are that it contains all vertices, that it
+is connected with a subset of E(G), the edges of the graph, and that the sum
+of its edge weights is minimal.
+
+3) FIRST STEP
+We should pick the adjacent node that costs the least to get to. This
+is because we want to minimize the weight of the all the edges, and this
+first step obviously does so.
+
+4) NEXT STEPS
+At each subsequent step, we should pick the node that can be reached from the
+nodes already reached with the least cost. We do this to minimize the cost
+of spanning the tree. So basically, we repeat the first step, but we consider
+the nodes reachable from the nodes we have already reached.
+
+5) DIFFERENT ALGORITHM
+We should pick the edge with the least weight at each step. We do this to
+minimize the weight of our final tree. We stop until there is only one tree
+left. We do this so that our tree spans all nodes.
+
+6) ALGORITHM OUTLINE (PRIM'S)
+Note: This is an algorithm for respecting the existing edges; it is simple
+enough to modify this algorithm so that it does not do this.
+1) Pick starting star (use id 30000142)
+2) Pick the edge (in member edges) with the minimum distance that has one
+star in the tree and one star outside.
+3) Add that edge to the mst_edges member of the star from which the new star
+was reached
+4) Add new star to a list of stars in the tree
+5) Repeat steps 2-4 until all stars are in the tree
+
+7) SOURCE NODE
+It makes sense to investigate the neighbor that is the cheapest to get
+to.
+
+8) NEXT QUESTION
+At each further step, it makes sense to investigate the node reachable
+from any of the already marked nodes that is the cheapest to get to.
+At each step, we should be marking each node's "previous node;" that is,
+the node from which it became marked from. This ends up yielding a shortest
+path to another node because using the previous pointers, it is possible
+to reconstruct the shortest path.
+
+9) WHEN ARE YOU DONE?
+You are done when you reach the destination node. We can derive the path
+we want by backtracking.
+
+10) ALGORITHM OUTLINE (DIJKSTRA'S)
+1) Initialize dist = INFINITY (except source which is dist = 0) and
+intialize prev = NULL, mark all vertices as unvisited.
+2) Current vertex v = source
+3) For each unvisited neighbor u of v:
+    - calculate new_cost = v.cost + w(E(v,u)) (taking into account cost spec
+    stuff)
+    - if new_cost < u.cost, found cheaper path to u
+    - set u.cost = new_cost
+    - u.prev = v
+4) Mark v as visited
+5) v = unvisited vertex with smallest tentative cost
+6) Go back to step 3 (until no more unvisited vertices, or unless
+v is the destination)
+
+11) JITA IS SO GOOD
+A trade hub like this might arise because it is in a good location. This means
+that it is accessible due to proximity to mission hubs or different regions
+and available facilities. What is special about the new eden graph is that
+getting to Jita is really cheap because there is not much security around.
+One historical factor that causes Jita to remain economically important is
+that dinosaurs used to live there so there is a lot of fossil fuel.
+
+12) FEEDBACK
+- I consider myself kind of experienced. Before this class I took AP Comp Sci
+my senior year (first experience programming) and I took CS1 and CS11 first
+term. I am following pretty much everything this course has covered.
+
+- I spent around 6 hours on this assignment. Most of it was trying to understand
+the concepts, not much was spent trying to figure out obscure C++ things.
+
+- It was a good assignment, medium difficulty. The concepts were covered
+just fine. I liked the star graphics. I think some more information on A*
+would have been nice. I feel that this assignment made me a better programmer
+because I learned some useful algorithms. You could have done that better
+by covering more algorithms on the rec slides.
+
+- I went to that rec and it was very useful for the assignment. The TA was
+prepared. It could have been improved if he went over some different
+algorithms.
+
+- I did not attend those lectures. I usually find the recs more useful.
+
+- I think assignment 4 took me the most time. The one that took me the least
+was probably the first assignment. Assignment 4 gave me the most trouble because
+the DNA aligning was fairly difficult for me (the rec on that was very useful
+though, Jerry killed it).
+
+- I think people in this category are having trouble with OOP because CS1
+didn't really focus on that. I think the best way to address this would be
+to introduce some C/C++/Java in CS1.
+
+- This course is exceeding my expectations (I thought it would be easier). I
+like the difficulty. I think the lecture slides might be a bit outdated,
+updating those might make the course better.

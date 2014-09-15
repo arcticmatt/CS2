@@ -1,0 +1,4 @@
+Backwards: This orbit gets closer as time goes on.
+Sympletic: This orbit stays the same as time goes on, and is the most
+accurate, since the energy value stays roughly constant.
+Forwards: This orbit gets further away as time goes on.

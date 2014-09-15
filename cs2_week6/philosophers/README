@@ -1,0 +1,23 @@
+GREEDY
+The greedy "solution" works as follows. Each philosopher picks up both
+the fork on his left and the fork on his right. He then eats, then
+releases both forks, then repeats the process.
+This "solution" will always deadlock because
+when each philosopher greedily tries to pick up the fork on the left,
+they will all be waiting forever to pick up the fork on the right. This
+is because each philosopher only releases a fork after he has grabbed both
+and eaten. But this scenario can never happen if each philosopher has a
+fork in the same hand. Thus deadlock happens.
+
+MAX NUMBER
+The max number of philosophers that can sit at the table at any one time is
+4. This is because if there are 4 at a table, then there will always be
+at least one philosopher that can eat (because he will have two free forks).
+
+CHANDY/MISRA
+If this solution began from a state where all philosophers begin with
+dirty, left forks, deadlock would happen. This is because each philosopher
+would request the right fork from his neighbor. The neighbor would give
+the right fork after cleaning it, because all the forks are originally
+dirty. But then each philosopher would have a clean fork in his right
+hand, so nobody would be able to eat.
